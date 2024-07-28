@@ -4,10 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
 @Getter
+@Setter
 @Entity
 public class Task implements Comparable<Task> {
     @Id
@@ -15,18 +17,7 @@ public class Task implements Comparable<Task> {
     private Long id;
     private String description;
     private boolean completed;
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private long length;
 
     @Override
     public boolean equals(Object o) {
